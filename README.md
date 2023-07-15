@@ -1,10 +1,7 @@
 # emoji-renderer
 
-# Getting Started with Create React App
-
 The screen recording of the app is attached.
 A redux store has been used to make the rendering smooth.
-
 
 **STEPS TO INSTALL**
 
@@ -34,4 +31,4 @@ In order to run the application please just use **npm start** command
 4. The emojis state is populated with the data fetched from the API and stored in the store using the **setEmojis** action.
 5. The emojis data is then accessed in components using the useSelector hook from react-redux, which allows us to select the desired state from the store.
 
-**Enjoy Exploring Emojis:**__ _Have fun exploring the vast world of emojis! The app showcases a wide variety of emojis from different categories and groups. Click on each emoji to copy it to your clipboard and use it wherever you like!_
+**Enjoy Exploring Emojis:**\_\_ _Have fun exploring the vast world of emojis! The app showcases a wide variety of emojis from different categories and groups. Click on each emoji to copy it to your clipboard and use it wherever you like!_
