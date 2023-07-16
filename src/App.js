@@ -4,6 +4,7 @@ import axios from "axios";
 import "./App.css";
 import EmojiTable from "./components/EmojiTable";
 import { setEmojis } from "./store";
+import Header from "./components/Header";
 
 const apiUrl = "https://emojihub.yurace.pro/api/all";
 const emojisPerPage = 10;
@@ -26,9 +27,11 @@ function App() {
     ];
     setAllCategories(["all", ...uniqueCategories]);
   }, [emojis]);
+
   useEffect(() => {
     setCurrentPage(1); // Reset to the first page when the search text changes
   }, [searchText]);
+
   useEffect(() => {
     setCurrentPage(1);
   }, [selectedCategory]);
@@ -90,31 +93,13 @@ function App() {
 
   return (
     <div className="App">
-      <header>
-        <h1>Emoji List</h1>
-        <div className="search-bar">
-          <input
-            type="text"
-            value={searchText}
-            onChange={(e) => setSearchText(e.target.value)}
-            placeholder="Search by name..."
-          />
-        </div>
-        <div>
-          <label htmlFor="category">Filter by Category:</label>
-          <select
-            id="category"
-            value={selectedCategory}
-            onChange={handleCategoryChange}
-          >
-            {allCategories.map((category) => (
-              <option key={category} value={category}>
-                {category}
-              </option>
-            ))}
-          </select>
-        </div>
-      </header>
+      <Header
+        searchText={searchText}
+        onSearchTextChange={setSearchText}
+        allCategories={allCategories}
+        selectedCategory={selectedCategory}
+        onCategoryChange={handleCategoryChange}
+      />
       <main>
         <div className="emoji-container">
           <EmojiTable emojis={displayEmojis()} />

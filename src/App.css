@@ -35,10 +35,11 @@ label {
 select {
   font-size: 14px;
   padding: 5px;
+  width: 95%;
 }
 
 .search-bar {
-  width: 50%;
+  width: 100%;
   margin-right: 20px;
 }
 
@@ -139,16 +140,21 @@ button:disabled {
   align-items: center;
   gap: 20px;
 }
+.filter {
+  display: flex;
+}
 
 /* For small screens (max-width: 600px) */
-@media screen and (max-width: 800px) {
+@media only screen and (max-width: 600px) {
   header {
-    flex-direction: column;
+    background-color: #010e1bd9;
     gap: 10px;
+    width: 100%;
   }
 
   .search-bar {
     margin: 10px 0;
+    width: 90%;
   }
 
   .emoji-container {
@@ -162,11 +168,22 @@ button:disabled {
 
   /* Hide the menu items by default on smaller screens */
   .menu-items {
+    align-items: baseline;
+    position: absolute;
+    z-index: 10;
+    top: 15%;
+    right: 3%;
+    width: 50%;
+    background-color: #010e1bd9;
+    border: 1px solid #ccc;
+    padding: 10px;
     display: none;
     flex-direction: column;
     gap: 10px;
   }
-
+  .filter {
+    display: flex;
+  }
   /* Show the menu items when the menu icon is clicked */
   .menu-items.open {
     display: flex;

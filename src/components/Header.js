@@ -30,6 +30,8 @@ function Header({
             onChange={(e) => onSearchTextChange(e.target.value)}
             placeholder="Search by name..."
           />
+        </div>
+        <div className="filter">
           <label htmlFor="category">Filter by Category:</label>
           <select
             id="category"
