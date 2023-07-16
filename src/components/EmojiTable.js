@@ -19,18 +19,16 @@ function EmojiTable({ emojis }) {
             {emojis.map((emoji) => (
               <tr key={emoji.name}>
                 <td>
-                  {emoji.htmlCode.map((code, index) => (
-                    <React.Fragment key={index}>
-                      <span
-                        dangerouslySetInnerHTML={{
-                          __html:
-                            index > 0 || emoji.category == "flags"
-                              ? `${emoji.htmlCode[0]}${emoji.htmlCode[1]}`
-                              : code,
-                        }}
-                      />
-                    </React.Fragment>
-                  ))}
+                  <React.Fragment>
+                    <span
+                      dangerouslySetInnerHTML={{
+                        __html:
+                          emoji.htmlCode.length > 1
+                            ? `${emoji.htmlCode[0]}${emoji.htmlCode[1]}`
+                            : emoji.htmlCode[0],
+                      }}
+                    />
+                  </React.Fragment>
                 </td>
                 <td>{emoji.name}</td>
                 <td>{emoji.category}</td>
