@@ -2,71 +2,29 @@
 
 # Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+The screen recording of the app is attached.
+I've used a redux store to make the rendering smooth.
+If node_modules packages are not installed just run npm i
+In order to run the application please just use npm start command
 
-## Available Scripts
+Search and Filter: You can use the search bar to search for emojis by their names. Just start typing in the search bar, and the table will dynamically update to show emojis that match your search criteria. Additionally, you can filter emojis by their categories using the dropdown menu.When you've selected a certain category then you can search in that category.
 
-In the project directory, you can run:
+Pagination: The emoji table displays 10 emojis per page. If you have more than 10 emojis matching your search or filter criteria, you can use the "Next" and "Prev" buttons at the bottom of the page to navigate through the pages and see more emojis.
 
-### `npm start`
+Responsive Header: On smaller screens (width less than 500px), the header will adapt to a responsive design. You'll see a hamburger menu icon on the top right corner. Clicking on the icon will reveal the search bar and filter dropdown options.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Emoji Table: The emojis are displayed in a sleek and modern tabular format. The table columns include "Emoji," "Name," "Category," and "Group."
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Loading Indicator: If the data is still being fetched from the server, you'll see a loading indicator. Once the data is fetched and available, the emojis will be displayed.
 
-### `npm test`
+Emoji Rendering: The emojis are rendered using their HTML codes. Each emoji can have multiple HTML codes if it has different skin tones or variations. The app will combine and display them accordingly.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Using Redux Store:
 
-### `npm run build`
+The application uses Redux store to manage the state and keep track of the emojis data fetched from the API.
+The Redux store is initialized in the store.js file using configureStore from @reduxjs/toolkit.
+We have a single state emojis in the store that holds the array of emojis data.
+The emojis state is populated with the data fetched from the API and stored in the store using the setEmojis action.
+The emojis data is then accessed in components using the useSelector hook from react-redux, which allows us to select the desired state from the store.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Enjoy Exploring Emojis: Have fun exploring the vast world of emojis! The app showcases a wide variety of emojis from different categories and groups. Click on each emoji to copy it to your clipboard and use it wherever you like!

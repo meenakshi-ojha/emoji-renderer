@@ -90,6 +90,7 @@ main {
 
 .emoji-table tbody tr:nth-child(odd) {
   background-color: #f9f9f9;
+  height: 4rem;
 }
 
 .emoji-table tbody tr:hover {
